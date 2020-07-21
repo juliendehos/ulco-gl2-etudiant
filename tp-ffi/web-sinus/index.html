@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+
+        <p> <canvas id="my_canvas" width="400" height="300"></canvas> </p>
+
+        <script src="sinus.js"></script>
+
+        <script>
+
+const width = my_canvas.clientWidth;
+const height = my_canvas.clientHeight;
+
+Module.onRuntimeInitialized = function () {
+
+    const sinusObj = new Module.Sinus(width, height);
+
+    function update() {
+        const sinusData = sinusObj.update();
+        const imageData = new ImageData(new Uint8ClampedArray(sinusData), width, height);
+        const context = my_canvas.getContext('2d');
+        context.putImageData(imageData, 0, 0);
+    }
+
+    update();
+};
+
+        </script>
+    </body>
+</html>
+
