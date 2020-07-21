@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title> Fibo (electronjs) </title>
+    <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+
+    <link rel="stylesheet" href="node_modules/chart.js/dist/Chart.min.css">
+    <script src="node_modules/chart.js/dist/Chart.min.js"></script>
+  </head>
+
+  <body>
+
+    <h1> Fibo (electronjs)</h1>
+
+    <p> n : <input type="number" id="my_input_n" min="2" max="21" value="10"/> </p>
+
+    <p id="my_p_fibo"> </p>
+
+<script>
+        
+my_input_n.oninput = function() {
+    const x = my_input_n.value;
+    my_p_fibo.innerHTML = `the value is ${x}`;
+}
+
+window.onload = function() {
+    my_p_fibo.innerHTML = "loaded";
+}
+
+    </script>
+
+  </body>
+</html>
+

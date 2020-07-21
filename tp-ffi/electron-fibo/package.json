@@ -1,0 +1,12 @@
+{
+    "name": "electron-fibo",
+    "version": "0.1.0",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron .",
+        "clean": "rm -rf node_modules package-lock.json"
+    },
+    "dependencies": {
+        "chart.js": "*"
+    }
+}
