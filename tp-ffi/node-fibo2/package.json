@@ -1,0 +1,10 @@
+{
+    "name": "node-fibo2",
+    "version": "0.0.1",
+    "scripts": {
+        "build:fibo": "em++ --bind --std=c++11 fibo.cpp -s WASM=0 -o fibo.js",
+        "build": "npm run build:fibo",
+        "fibo": "node test_fibo.js",
+        "clean": "rm -rf fibo.js sinus.js node_modules core package-lock.json"
+    }
+}
