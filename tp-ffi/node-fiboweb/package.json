@@ -1,0 +1,14 @@
+{
+    "name": "fiboweb",
+    "version": "0.0.1",
+    "scripts": {
+        "build:wasm": "em++ --bind --std=c++11 *.cpp -s WASM=1 -o all_wasm.js",
+        "build:asmjs": "em++ --bind --std=c++11 *.cpp -s WASM=0 -o all_asmjs.js",
+        "build": "npm run build:wasm && npm run build:asmjs",
+        "clean": "rm -rf node_modules package-lock.json all_*",
+        "start": "node server.js"
+    },
+    "dependencies": {
+        "express": "4.*"
+    }
+}
