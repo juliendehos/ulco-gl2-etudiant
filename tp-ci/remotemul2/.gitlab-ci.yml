@@ -1,0 +1,33 @@
+build:
+    stage: build
+    image: nixos/nix
+    artifacts:
+        untracked: true
+    script:
+        - nix-build docker.nix
+        - cp result app.tar.gz
+
+# test:
+#     stage: test
+#     image: nixos/nix
+#     script:
+#         - nix-env -iA nixpkgs.cabal-install
+#         - nix-shell --run "cabal --http-transport=plain-http test"
+
+production:
+    stage: deploy
+    image: docker:stable
+    services:
+        - docker:dind
+    before_script:
+        - apk add curl bash nodejs
+        - curl https://cli-assets.heroku.com/install.sh | sh
+    script:
+        - docker load < app.tar.gz
+        - heroku container:login
+        - docker tag remotemul2 registry.heroku.com/$APP_NAME/web
+        - docker push registry.heroku.com/$APP_NAME/web
+        - heroku container:release web --app $APP_NAME
+    only:
+        - master
+

@@ -1,0 +1,30 @@
+cabal-version:      2.2
+name:               remotemul2
+version:            1.0
+build-type:         Simple
+license:            MIT
+
+common deps
+    ghc-options:        -Wall -O
+    default-language:   Haskell2010
+    build-depends:      base
+
+library
+    import:             deps
+    hs-source-dirs:     src
+    exposed-modules:    Lib
+
+executable remotemul2
+    import:             deps
+    hs-source-dirs:     app
+    main-is:            Main.hs
+    build-depends:      remotemul2, lucid, scotty
+
+test-suite spec
+    import:             deps
+    main-is:            Spec.hs
+    hs-source-dirs:     test
+    type:               exitcode-stdio-1.0
+    build-depends:      remotemul2, hspec
+    other-modules:      LibSpec
+
