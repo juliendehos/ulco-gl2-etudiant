@@ -1,6 +1,5 @@
 result
 dist-*
 build
-.vscode
 .*~
 
