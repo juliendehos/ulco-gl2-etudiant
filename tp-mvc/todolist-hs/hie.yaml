@@ -1,0 +1,7 @@
+cradle:
+  cabal:
+    - path: "./src"
+      component: "lib:todolist"
+    - path: "./app"
+      component: "exe:todolist"
+      
