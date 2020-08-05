@@ -1,0 +1,6 @@
+cradle:
+  cabal:
+    - path: "./app/server"
+      component: "exe:chat-server"
+    - path: "./app/client"
+      component: "exe:chat-client"

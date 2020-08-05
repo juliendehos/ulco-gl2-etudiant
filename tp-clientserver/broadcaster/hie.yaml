@@ -1,0 +1,6 @@
+cradle:
+  cabal:
+    - path: "./app/server"
+      component: "exe:broadcaster-server"
+    - path: "./app/client"
+      component: "exe:broadcaster-client"
