@@ -1,0 +1,29 @@
+cabal-version:      2.2
+name:               game
+version:            1.0
+build-type:         Simple
+license:            MIT
+
+common deps
+    ghc-options:        -Wall -O
+    default-language:   Haskell2010
+    build-depends:      base, bytestring, text, websockets
+
+library
+    import:             deps
+    hs-source-dirs:     src
+    exposed-modules:    Game
+
+executable game-server
+    import:             deps
+    hs-source-dirs:     app/server
+    main-is:            Main.hs
+    other-modules:      Model, Net
+    build-depends:      game
+
+executable game-client
+    import:             deps
+    hs-source-dirs:     app/client
+    main-is:            Main.hs
+    build-depends:      game
+

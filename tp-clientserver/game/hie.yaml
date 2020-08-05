@@ -1,0 +1,8 @@
+cradle:
+  cabal:
+    - path: "./src"
+      component: "lib:game"
+    - path: "./app/server"
+      component: "exe:game-server"
+    - path: "./app/client"
+      component: "exe:game-client"
