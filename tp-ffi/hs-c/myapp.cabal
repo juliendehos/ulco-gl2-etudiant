@@ -1,0 +1,13 @@
+cabal-version:      2.2
+name:               myapp
+version:            1.0
+build-type:         Simple
+license:            MIT
+
+executable myapp
+    main-is:            myapp.hs
+    C-sources:          mymath.c 
+    ghc-options:        -Wall
+    default-language:   Haskell2010
+    build-depends:      base
+
