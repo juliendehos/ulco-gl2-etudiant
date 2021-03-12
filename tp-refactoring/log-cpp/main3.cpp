@@ -11,7 +11,7 @@ int mul2(int n) {
 }
 
 struct AbstractMycompute {
-    virtual ~AbstractMycompute();
+    virtual ~AbstractMycompute() = default;
     virtual int mycompute(int v0) = 0;
 };
 
