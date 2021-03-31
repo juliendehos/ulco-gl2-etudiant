@@ -20,8 +20,7 @@ serverApp :: Var -> WS.PendingConnection -> IO ()
 serverApp var pc = do
     conn <- WS.acceptRequest pc
     iConn <- modifyMVar var (return . addConn conn)
-    WS.withPingThread conn 30 (return ())
-        (finally (handleConn conn) (handleQuit var iConn))
+    WS.withPingThread conn 30 (handleQuit var iConn) (handleConn conn) 
 
 handleConn :: WS.Connection -> IO ()
 handleConn conn = do
