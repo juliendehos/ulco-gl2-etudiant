@@ -4,6 +4,7 @@ import qualified Data.Text as T
 import qualified Network.WebSockets as WS
 
 import Control.Concurrent
+import Control.Exception (finally)
 
 import Model
 import Net
@@ -19,7 +20,8 @@ serverApp :: Var -> WS.PendingConnection -> IO ()
 serverApp var pc = do
     conn <- WS.acceptRequest pc
     iConn <- modifyMVar var (return . addInModel conn)
-    WS.withPingThread conn 30 (handleQuit var iConn) (handleConn var iConn conn) 
+    WS.withPingThread conn 30 (return ())
+        (finally (handleConn var iConn conn) (handleQuit var iConn))
 
 handleConn :: Var -> Int -> WS.Connection -> IO ()
 handleConn var iConn conn = do
