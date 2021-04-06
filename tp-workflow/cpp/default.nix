@@ -1,12 +1,11 @@
 { pkgs ? import <nixpkgs> {} }:
 
-with pkgs;
-
-stdenv.mkDerivation {
+with pkgs; clangStdenv.mkDerivation {
   name = "tictactoe";
   src = ./.;
   buildInputs = [
     cmake
+    catch2
     pkgconfig
     doxygen
     cpputest
