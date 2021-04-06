@@ -8,7 +8,6 @@ with pkgs; clangStdenv.mkDerivation {
     catch2
     pkgconfig
     doxygen
-    cpputest
   ];
 }
 
