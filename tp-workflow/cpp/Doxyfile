@@ -1,0 +1,7 @@
+PROJECT_NAME           = tictactoe
+OUTPUT_DIRECTORY       = doc
+INPUT                  = .
+EXTRACT_ALL            = YES
+GENERATE_LATEX         = NO
+OUTPUT_LANGUAGE        = French
+
