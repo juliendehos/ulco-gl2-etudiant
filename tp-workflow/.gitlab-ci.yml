@@ -1,0 +1,59 @@
+cpp_build:
+    image: alpine
+    before_script:
+        - apk add build-base cmake catch2 g++ pkgconf
+    stage: build
+    artifacts:
+        untracked: true
+    script:
+        - cd cpp
+        - mkdir build
+        - cd build
+        - cmake ..
+        - make 
+
+cpp_test:
+    image: alpine
+    before_script:
+        - apk add build-base catch2 g++
+    stage: test
+    dependencies: 
+        - cpp_build
+    script:
+        - cd cpp/build
+        - ./tictactoe-test
+
+cpp_doc:
+    image: alpine
+    before_script:
+        - apk add doxygen
+    stage: build
+    artifacts:
+        untracked: true
+    script:
+        - cd cpp
+        - doxygen
+
+js_build:
+    image: trzeci/emscripten
+    stage: build
+    artifacts:
+        untracked: true
+    script:
+        - make -C js
+
+pages:
+    image: alpine
+    stage: deploy
+    dependencies: 
+        - cpp_doc
+        - js_build
+    script:
+        - mkdir -p public
+        - cp index.html public/
+        - cp -R js public/
+        - cp -R cpp/doc/html public/doc
+    artifacts:
+        paths:
+            - public
+

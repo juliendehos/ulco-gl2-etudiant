@@ -6,8 +6,8 @@ with pkgs; clangStdenv.mkDerivation {
   buildInputs = [
     cmake
     catch2
-    pkgconfig
     doxygen
+    pkgconfig
   ];
 }
 

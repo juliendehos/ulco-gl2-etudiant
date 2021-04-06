@@ -11,7 +11,6 @@ emscriptenStdenv.mkDerivation {
     python3
     python3Packages.httpserver
     emscriptenPackages.zlib
-
   ];
 
 }
