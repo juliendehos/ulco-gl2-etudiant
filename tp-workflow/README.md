@@ -3,9 +3,9 @@
 Implémentation C++/JavaScript du jeu de Tictactoe.
 
 
-- Nom: TODO
-- Prénom: TODO
-- Groupe: TODO - G1/G2/App
+- Nom: ACHEHBOUN
+- Prénom: ALADINE
+- Groupe: G1
 
 
 ## Compilation du projet C++
