@@ -7,6 +7,6 @@
         "clean": "rm -rf node_modules package-lock.json"
     },
     "dependencies": {
-        "chart.js": "*"
+        "chart.js": "2.9.*"
     }
 }

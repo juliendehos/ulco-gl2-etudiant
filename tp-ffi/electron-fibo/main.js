@@ -4,7 +4,10 @@ function createWindow () {
     let win = new BrowserWindow({
         width: 600,
         height: 600,
-        webPreferences: { nodeIntegration: true }
+        webPreferences: {
+            nodeIntegration: true,
+            contextIsolation: false
+        }
     })
 
     win.loadFile('index.html')
