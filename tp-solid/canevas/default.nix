@@ -1,6 +1,6 @@
 { pkgs ? import <nixpkgs> {} }:
 
-with pkgs; clangStdenv.mkDerivation {
+with pkgs; stdenv.mkDerivation {
     name = "canevas";
     src = ./.;
 

@@ -1,6 +1,6 @@
 with import <nixpkgs> {};
 
-clangStdenv.mkDerivation {
+stdenv.mkDerivation {
   name = "multisdl-native";
   src = ./.;
   nativeBuildInputs = [

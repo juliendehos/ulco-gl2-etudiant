@@ -1,6 +1,6 @@
 { pkgs ? import <nixpkgs> {} }:
 
-pkgs.clangStdenv.mkDerivation {
+pkgs.stdenv.mkDerivation {
     name = "masuperlib";
     src = ./.;
 
