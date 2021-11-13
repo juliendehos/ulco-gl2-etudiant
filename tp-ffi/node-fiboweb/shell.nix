@@ -5,8 +5,7 @@ emscriptenStdenv.mkDerivation {
   src = ./.;
 
   buildInputs = [
-    gnumake
-    python3Packages.httpserver
+    nodejs
   ];
 
 }
