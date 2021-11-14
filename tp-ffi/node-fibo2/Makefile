@@ -1,7 +1,7 @@
 
 fibo:
-	nix-shell --run "em++ --bind -s WASM=0 -o fibo.js fibo.cpp"
-	nix-shell --run "node test_fibo.js"
+	em++ --bind -s WASM=0 -o fibo.js fibo.cpp
+	node test_fibo.js
 
 
 clean:
