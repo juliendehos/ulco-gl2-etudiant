@@ -1,7 +1,6 @@
 { pkgs ? import <nixpkgs> {} }:
 
 let
-  # app = pkgs.haskellPackages.callCabal2nix "remotemul2" ./. {};
   drv = pkgs.haskellPackages.callCabal2nix "remotemul2" ./. {};
   app = pkgs.haskell.lib.justStaticExecutables drv;
 
