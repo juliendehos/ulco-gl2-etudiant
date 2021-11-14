@@ -1,5 +1,4 @@
 {
-    "nixEnvSelector.nixShellConfig": "${workspaceRoot}/default.nix",
-    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
-    "cmake.configureOnOpen": true
+    "nixEnvSelector.nixFile": "${workspaceRoot}/default.nix",
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools"
 }
