@@ -3,6 +3,7 @@
     <head> 
         <meta charset="UTF-8"/> 
         <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+        <script src="fibo.js"></script>
     </head>
 
     <body>
@@ -11,8 +12,8 @@
 
 <script>
 
-const n = 100;
-const datapoints = Array.from({length: n}, (_,i) => ({x: i/n, y: Math.sin(2*Math.PI*i/n)}));
+const n = 10;
+const datapoints = Array.from({length: n}, (_,i) => ({x: i, y: fiboIterative(i)}));
 
 const ctx = document.getElementById('myCanvas').getContext('2d');
 
@@ -38,7 +39,7 @@ const myCanvas = new Chart(ctx, {
                 display: true,
                 scaleLabel: {
                     display: true,
-                    labelString: 'sin'
+                    labelString: 'fibo(x)'
                 }
             }]
         }
