@@ -2,6 +2,7 @@
 <html>
     <head> 
         <meta charset="UTF-8"/> 
+        <script src="fibo.js"></script>
     </head>
 
     <body>
@@ -9,10 +10,11 @@
         <ul id="my_ul"> </ul>
 
     <script>
-        const n = 42;
-        const node = document.createElement("li");
-        node.innerHTML = `fibo(${n}) = TODO`;
-        my_ul.appendChild(node);
+        for(let n=0;n<10;n++){
+            const node = document.createElement("li");
+            node.innerHTML = `fibo(${n}) = ${fiboIterative(n)}`;
+            my_ul.appendChild(node);
+        }
     </script>
 
     </body>
