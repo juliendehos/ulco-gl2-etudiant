@@ -31,8 +31,6 @@ class Jeu {
 
         // Réinitialise le jeu.
         void raz();
-
-        friend std::ostream & operator<<(std::ostream & os, const Jeu & jeu);
 };
 
 std::ostream & operator<<(std::ostream & os, const Jeu & jeu);
