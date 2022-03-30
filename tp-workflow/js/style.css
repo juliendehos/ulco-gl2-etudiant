@@ -9,15 +9,15 @@ table {
     border-collapse: collapse;
 }
 
-.joueurVert {
+.cellVert {
     background-color: green;
 }
 
-.joueurRouge {
+.cellRouge {
     background-color: red;
 }
 
-.joueurVide {
+.cellVide {
     background-color: white;
 }
 

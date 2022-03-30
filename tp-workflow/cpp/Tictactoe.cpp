@@ -4,8 +4,14 @@ Jeu::Jeu() {
     raz();
 }
 
-void Jeu::raz() {
+Status Jeu::getStatus() const {
     // TODO
+    return Status::RougeJoue;
+}
+
+Cell Jeu::getCell(int i, int j) const {
+    // TODO
+    return Cell::Vide;
 }
 
 std::ostream & operator<<(std::ostream & os, const Jeu & jeu) {
@@ -13,18 +19,12 @@ std::ostream & operator<<(std::ostream & os, const Jeu & jeu) {
     return os;
 }
 
-Joueur Jeu::getVainqueur() const {
-    // TODO
-    return JOUEUR_VIDE;
-}
-
-Joueur Jeu::getJoueurCourant() const {
-    // TODO
-    return JOUEUR_VIDE;
-}
-
 bool Jeu::jouer(int i, int j) {
     // TODO
     return false;
+}
+
+void Jeu::raz() {
+    // TODO
 }
 

@@ -4,11 +4,18 @@
 
 EMSCRIPTEN_BINDINGS(tictactoe) {
 
-    emscripten::enum_<Joueur>("Joueur")
-        .value("VIDE", JOUEUR_VIDE)
-        .value("ROUGE", JOUEUR_ROUGE)
-        .value("VERT", JOUEUR_VERT)
-        .value("EGALITE", JOUEUR_EGALITE)
+    emscripten::enum_<Cell>("Cell")
+        .value("Vide", Cell::Vide)
+        .value("Rouge", Cell::Rouge)
+        .value("Vert", Cell::Vert)
+        ;
+
+    emscripten::enum_<Status>("Status")
+        .value("Egalite", Status::Egalite)
+        .value("RougeGagne", Status::RougeGagne)
+        .value("VertGagne", Status::VertGagne)
+        .value("RougeJoue", Status::RougeJoue)
+        .value("VertJoue", Status::VertJoue)
         ;
 
     emscripten::class_<Jeu>("Jeu")

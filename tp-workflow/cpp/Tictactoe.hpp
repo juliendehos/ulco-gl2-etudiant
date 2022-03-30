@@ -4,21 +4,25 @@
 #include <array>
 #include <iostream>
 
-enum Joueur { JOUEUR_VIDE, JOUEUR_ROUGE, JOUEUR_VERT, JOUEUR_EGALITE };
+enum class Status { Egalite, RougeGagne, VertGagne, RougeJoue, VertJoue };
 
+enum class Cell { Vide, Rouge, Vert };
+
+// Moteur de jeu de tictactoe.
 class Jeu {
     private:
+        std::array<std::array<Cell, 3>, 3> _plateau;
         // TODO
 
     public:
         // Constructeur à utiliser.
         Jeu();
 
-        // Retourne le vainqueur (ROUGE, VERT, EGALITE) ou VIDE si partie en cours.
-        Joueur getVainqueur() const;
+        // Retourne le status du jeu courant (Egalite, RougeGagne, VertGagne, RougeJoue, VertJoue).
+        Status getStatus() const;
 
-        // Retourne le joueur (ROUGE ou VERT) qui doit jouer.
-        Joueur getJoueurCourant() const;
+        // Retourne l'état d'une case du plateau
+        Cell getCell(int i, int j) const;
 
         // Joue un coup pour le joueur courant.
         // 

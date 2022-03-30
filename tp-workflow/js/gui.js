@@ -1,19 +1,20 @@
 "use strict";
 
-function joueurVersTexte(joueur) {
-    switch (joueur) {
-        case Module.Joueur.VIDE: return "vide";
-        case Module.Joueur.ROUGE: return "rouge";
-        case Module.Joueur.VERT: return "vert";
-        case Module.Joueur.EGALITE: return "égalité";
+function statusVersTexte(st) {
+    switch (st) {
+        case Module.Status.Egalite: return "égalité";
+        case Module.Status.RougeGagne: return "rouge gagne";
+        case Module.Status.VertGagne: return "vert gagne";
+        case Module.Status.RougeJoue: return "rouge joue";
+        case Module.Status.VertJoue: return "vert joue";
     }
 }
 
-function joueurVersCss(joueur) {
-    switch (joueur) {
-        case Module.Joueur.ROUGE: return "a joueurRouge";
-        case Module.Joueur.VERT: return "a joueurVert"
-        default: return "a joueurVide";
+function cellVersCss(cell) {
+    switch (cell) {
+        case Module.Cell.Rouge: return "a cellRouge";
+        case Module.Cell.Vert: return "a cellVert"
+        case Module.Cell.Vide: return "a cellVide";
     }
 }
 
