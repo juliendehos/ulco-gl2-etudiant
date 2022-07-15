@@ -1,5 +1,8 @@
-result
 dist-*
 build*
-.*~
+result
+td/*png
+td/*.pdf
+*.egg-info
+*.so
 

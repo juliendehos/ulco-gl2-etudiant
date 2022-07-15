@@ -1,27 +1,9 @@
-cpp_build:
-    image: alpine
-    before_script:
-        - apk add build-base cmake catch2 g++ pkgconf
+cpp_build_test:
+    image: nixos/nix
     stage: build
-    artifacts:
-        untracked: true
     script:
-        - cd cpp
-        - mkdir build
-        - cd build
-        - cmake ..
-        - make 
-
-cpp_test:
-    image: alpine
-    before_script:
-        - apk add build-base catch2 g++
-    stage: test
-    dependencies: 
-        - cpp_build
-    script:
-        - cd cpp/build
-        - ./tictactoe-test
+        - cd tp-workflow/cpp
+        - nix-build
 
 cpp_doc:
     image: alpine
@@ -31,29 +13,19 @@ cpp_doc:
     artifacts:
         untracked: true
     script:
-        - cd cpp
+        - cd tp-workflow/cpp
         - doxygen
-
-js_build:
-    image: trzeci/emscripten
-    stage: build
-    artifacts:
-        untracked: true
-    script:
-        - make -C js
 
 pages:
     image: alpine
     stage: deploy
     dependencies: 
         - cpp_doc
-        - js_build
     script:
         - mkdir -p public
-        - cp index.html public/
-        - cp -R js public/
-        - cp -R cpp/doc/html public/doc
+        - cp -R tp-workflow/cpp/doc/html/* public/
     artifacts:
         paths:
             - public
+
 
