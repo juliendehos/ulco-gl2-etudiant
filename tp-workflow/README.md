@@ -34,9 +34,3 @@ status.name
 - https://www.cairographics.org/documentation/cairomm/reference/classCairo_1_1Context.html
 - https://athenajc.gitbooks.io/python-gtk-3-api/content/gtk-group/gtkdrawingarea.html
 
-## Pour nettoyer le projet
-
-```
-python setup.py clean --all
-```
-
