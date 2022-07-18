@@ -5,7 +5,7 @@ with pkgs;
 python3Packages.buildPythonPackage {
   name = "tictactoe-gui";
   src = ./.;
-  propagatedBuildInputs = [
+  buildInputs = [
     gobject-introspection
     gtk3
     python3Packages.pygobject3

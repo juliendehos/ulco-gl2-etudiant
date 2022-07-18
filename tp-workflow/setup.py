@@ -10,6 +10,6 @@ setup(
     name = 'tictactoe-gui',
     version = '0.1.0',
     ext_modules = exts,
-    scripts = ['src/tictactoe_gui.py']
+    scripts = ['scripts/tictactoe_gui.py']
     )
 
