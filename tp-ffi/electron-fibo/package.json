@@ -1,8 +1,0 @@
-{
-    "name": "electron-fibo",
-    "version": "0.1.0",
-    "main": "main.js",
-    "dependencies": {
-        "chart.js": "2.9.*"
-    }
-}
