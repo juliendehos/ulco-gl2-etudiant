@@ -5,4 +5,5 @@ td/*png
 td/*.pdf
 *.egg-info
 *.so
+output.png
 
