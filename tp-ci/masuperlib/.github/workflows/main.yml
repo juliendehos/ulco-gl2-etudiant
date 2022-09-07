@@ -1,0 +1,22 @@
+name: Build project and run tests
+
+on:
+  push:
+    branches: main
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install dependencies
+      run: |
+        sudo apt-get update 
+        sudo apt-get install -yq cmake catch2
+
+    # Build project
+
+    # Run tests
+
