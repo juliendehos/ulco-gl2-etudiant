@@ -1,8 +1,0 @@
-cradle:
-  cabal:
-    - path: "src"
-      component: "lib:remotemul2"
-    - path: "app"
-      component: "exe:remotemul2"
-    - path: "./test"
-      component: "test:spec"
