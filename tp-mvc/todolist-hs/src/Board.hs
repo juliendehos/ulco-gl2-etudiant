@@ -4,7 +4,7 @@ module Board where
 import Task
 
 data Board = Board
-    { _boardId :: Int
+    { _boardNextId :: Int
     , _boardTodo :: [Task]
     , _boardDone :: [Task]
     }
