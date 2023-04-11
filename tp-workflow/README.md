@@ -14,7 +14,7 @@ Implémentation C++/Python du jeu de Tictactoe.
 
 - aller dans le dossier `tp-workflow`
 - lancer VSCode
-- pour exécuter : `nix-shell --run "tictactoe_gui.py"`
+- pour exécuter : `nix-shell --run "python scripts/tictactoe_gui.py"`
 
 
 ## Pour utiliser l'interpréteur Python
