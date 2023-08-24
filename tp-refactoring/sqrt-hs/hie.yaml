@@ -1,8 +1,0 @@
-cradle:
-  cabal:
-    - path: "./src"
-      component: "lib:sqrt-hs"
-    - path: "./app"
-      component: "exe:sqrt-hs"
-    - path: "./test"
-      component: "test:spec"

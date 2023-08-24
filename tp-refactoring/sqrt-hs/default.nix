@@ -1,4 +1,19 @@
 { pkgs ? import <nixpkgs> {} }:
-let drv = pkgs.haskellPackages.callCabal2nix "sqrt-hs" ./. {};
-in if pkgs.lib.inNixShell then drv.env else drv
+
+let
+  ghc = pkgs.haskellPackages;
+
+in ghc.developPackage {
+  root = ./.;
+  withHoogle = false;
+
+  modifier = drv:
+    #pkgs.haskell.lib.dontHaddock (
+      pkgs.haskell.lib.addBuildTools drv (with ghc; [
+        cabal-install
+    ]);
+    #]));
+
+}
+
 
