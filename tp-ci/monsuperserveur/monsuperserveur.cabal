@@ -7,7 +7,7 @@ license:            MIT
 common deps
     ghc-options:        -Wall -O
     default-language:   Haskell2010
-    build-depends:      base
+    build-depends:      base, lucid, scotty
 
 library
     import:             deps
@@ -18,7 +18,7 @@ executable monsuperserveur
     import:             deps
     hs-source-dirs:     app
     main-is:            Main.hs
-    build-depends:      monsuperserveur, lucid, scotty
+    build-depends:      monsuperserveur
 
 test-suite spec
     import:             deps
