@@ -1,5 +1,6 @@
 {-# LANGUAGE OverloadedStrings #-}
 
+import Control.Monad (forever)
 import qualified Data.Text as T
 import qualified Network.WebSockets as WS
 
@@ -17,8 +18,9 @@ serverApp pc = do
 
 handleConn :: WS.Connection -> IO ()
 handleConn conn = do
-    msg <- WS.receiveDataMessage conn
-    WS.sendTextData conn (WS.fromDataMessage msg :: T.Text)
-    putStrLn $ "echoed: " <> show msg
-    handleConn conn
+    WS.sendTextData conn ("connected to echo-server" :: T.Text)
+    forever $ do
+        msg <- WS.receiveDataMessage conn
+        WS.sendTextData conn (WS.fromDataMessage msg :: T.Text)
+        putStrLn $ "echoed: " <> show msg
 

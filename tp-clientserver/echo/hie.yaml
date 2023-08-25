@@ -1,6 +1,0 @@
-cradle:
-  cabal:
-    - path: "./app/server"
-      component: "exe:echo-server"
-    - path: "./app/client"
-      component: "exe:echo-client"
