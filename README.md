@@ -6,4 +6,3 @@ dépôt étudiant du [module de GL2](https://juliendehos.gitlab.io/posts/gl2/ind
 - PRENOM : TODO
 - GROUPE : TODO
 
-
