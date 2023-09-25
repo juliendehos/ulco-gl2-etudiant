@@ -1,7 +1,7 @@
 with import <nixpkgs> {};
 
 let
-  masuperlib-src = ../masuperlib;
+  masuperlib-src = fetchTarball "todo";
 
   masuperlib = callPackage masuperlib-src {};
 

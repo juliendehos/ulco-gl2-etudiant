@@ -1,0 +1,7 @@
+
+build:
+  stage: build
+  image: nixos/nix
+  script:
+    - nix-build 
+
