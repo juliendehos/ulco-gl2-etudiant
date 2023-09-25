@@ -1,0 +1,14 @@
+
+pages:
+  stage: deploy
+  image: debian
+  before_script:
+    - apt-get update -qq
+    - apt-get install -y -qq build-essential doxygen
+  script:
+    - doxygen
+    - mv docs/html public
+  artifacts:
+    paths:
+      - public
+
