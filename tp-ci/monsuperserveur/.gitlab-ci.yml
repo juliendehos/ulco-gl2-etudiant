@@ -1,0 +1,20 @@
+
+build-docker:
+# TODO
+
+deploy:
+  stage: deploy
+  image: docker
+  services:
+    - docker:dind
+  dependencies: 
+    - build-docker
+  script:
+    - echo $CI_REGISTRY
+    - echo $CI_REGISTRY_USER
+    - echo $CI_REGISTRY_IMAGE
+    - docker login -u $CI_REGISTRY_USER -p $CI_JOB_TOKEN $CI_REGISTRY
+    - docker load -i monsuperserveur.tar.gz
+    - docker tag monsuperserveur $CI_REGISTRY_IMAGE
+    - docker push $CI_REGISTRY_IMAGE
+
