@@ -1,0 +1,6 @@
+[book]
+authors = ["Julien Dehos"]
+language = "fr"
+multilingual = false
+src = "src"
+title = "drunk_player"
