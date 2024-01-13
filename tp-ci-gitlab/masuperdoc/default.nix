@@ -5,17 +5,16 @@ stdenv.mkDerivation {
   src = ./.;
 
   nativeBuildInputs = [
-    gnumake
-    python3Packages.sphinx
+    mdbook
   ];
 
   buildPhase = ''
-    make html
+    mdbook build
   '';
 
   installPhase = ''
     mkdir -p $out/public
-    cp -r build/html/* $out/public/
+    cp -r book/* $out/public/
   '';
 
 }
