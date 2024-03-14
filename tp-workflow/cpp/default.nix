@@ -8,7 +8,7 @@ with pkgs; stdenv.mkDerivation {
     cmake
     catch2
     doxygen
-    pkgconfig
+    pkg-config
     python3Packages.pybind11
   ];
 

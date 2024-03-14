@@ -7,7 +7,7 @@ with pkgs; stdenv.mkDerivation {
     nativeBuildInputs = [
         cmake
         catch2
-        pkgconfig
+        pkg-config
         SDL2
         SDL2_gfx
     ];
