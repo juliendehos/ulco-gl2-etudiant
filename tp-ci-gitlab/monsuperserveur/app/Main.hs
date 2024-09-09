@@ -24,6 +24,6 @@ main = do
                     p_ $ a_ [href_ "/mul2/21"] "try /mul2/21"
 
         get "/mul2/:n" $ do
-            n <- read <$> param "n"
+            n <- read <$> captureParam "n"
             json $ mul2 (n :: Int)
 
