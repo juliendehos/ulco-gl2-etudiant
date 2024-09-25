@@ -4,5 +4,5 @@ dépôt étudiant du [module de GL2](https://juliendehos.gitlab.io/posts/gl2/ind
 
 - NOM : TODO
 - PRENOM : TODO
-- GROUPE : TODO
+- GROUPE : TODO (1, 2)
 
