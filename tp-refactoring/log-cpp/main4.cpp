@@ -24,7 +24,7 @@ int mycompute(int v0) {
     std::cout << "add3 " + std::to_string(v0) << std::endl;
     const int v1 = add3(v0);
     std::cout << "mul2 " + std::to_string(v1) << std::endl;
-    const int v2 = add3(v1);
+    const int v2 = mul2(v1);
     return v2;
 }
 
