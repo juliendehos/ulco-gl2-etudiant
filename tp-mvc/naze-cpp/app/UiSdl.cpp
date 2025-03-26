@@ -9,7 +9,7 @@ void uiInit(SDL_Window *& window, SDL_Renderer *& renderer) {
         exit(-1);
     }
 
-    window = SDL_CreateWindow("Reversi", 
+    window = SDL_CreateWindow("naze-cpp", 
             SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
             200, 200, SDL_WINDOW_SHOWN);
     if (window == nullptr) {

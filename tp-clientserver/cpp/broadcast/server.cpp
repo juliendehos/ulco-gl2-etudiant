@@ -37,7 +37,6 @@ int main() {
     };
 
     hv::WebSocketServer server;
-    server.registerWebSocketService(&ws);
     server.setPort(9000);
     std::cout << "waiting for clients..." << std::endl;
     std::thread inputThread(handleInput, std::ref(net));
